@@ -217,7 +217,7 @@ void show_controls()
 
   for(i=0;ControlFiles[i]!=0;++i) {
     snprintf(tmpbuf, 1000, 
-"<a href=/cgi-bin/vqadmin/vqadmin.cgi?nav=display_file&fname=%s>%s</a>\n",
+"<a href=/cgi/vqadmin/vqadmin.cgi?nav=display_file&fname=%s>%s</a>\n",
       ControlFiles[i], ControlFiles[i]);
     global_par("a0", tmpbuf); 
 

@@ -514,7 +514,7 @@ void show_users()
   printf("</table>\n");
   printf("<HR>\n");
 
-  printf("<a href=\"/cgi-bin/vqadmin/vqadmin.cgi\">Main VqAdmin Menu</a><BR><BR>\n");
+  printf("<a href=\"/cgi/vqadmin/vqadmin.cgi\">Main VqAdmin Menu</a><BR><BR>\n");
   printf("<a href=http://www.inter7.com/vqadmin/>%s</a> %s<BR>\n", 
     VQA_PACKAGE, VQA_VERSION);
   printf("<a href=http://www.inter7.com/vpopmail/>%s</a> %s<BR>\n", 
