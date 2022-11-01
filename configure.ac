@@ -1,6 +1,6 @@
 dnl Process this file with autoconf to produce a configure script.
 AC_INIT(vqadmin.c)
-AM_INIT_AUTOMAKE(vqadmin,2.3.6)
+AM_INIT_AUTOMAKE(vqadmin,2.4.0)
 AM_CONFIG_HEADER(config.h)
 AC_CANONICAL_HOST
 
@@ -15,6 +15,14 @@ if test "$GCC" = yes ; then
         CXXFLAGS="$CXXFLAGS -Wall"
         CFLAGS="$CFLAGS -Wall"
 fi
+
+vqa_version="$VERSION"
+AC_SUBST(vqa_version)
+AC_DEFINE_UNQUOTED(VQA_VERSION,"$vqa_version")
+
+vqa_package="$PACKAGE"
+AC_SUBST(vqa_package)
+AC_DEFINE_UNQUOTED(VQA_PACKAGE,"$vqa_package")
 
 qmaildir=""
 for f in /var/qmail
@@ -160,6 +168,14 @@ do
     fi
 done
 
+AC_ARG_ENABLE(wwwroot, [  --enable-wwwroot={dir}   HTTP server's html directory.],
+    wwwroot="$enableval",
+    [
+        if test "$wwwroot" = ""
+        then
+            AC_MSG_ERROR([Unable to find your cgi-bin directory, specify --enable-wwwroot.])
+        fi
+    ] )
 AC_SUBST(wwwroot)
 
 AC_ARG_ENABLE(cgibindir, [  --enable-cgibindir={dir}   HTTP server's cgi-bin directory.],

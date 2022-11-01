@@ -51,12 +51,8 @@ install-data-local:
 	if test -f @cgibindir@/vqadmin/.htaccess ; then \
 		echo ".htaccess file already in place" ; \
 	else \
-		cp htaccess        @cgibindir@/vqadmin/.htaccess ; \
+		cp htaccess        @cgibindir@/vqadmin/htaccess.dist ; \
 	fi
-
-	chown nobody       @cgibindir@/vqadmin/.htaccess
-	chmod u+rw         @cgibindir@/vqadmin/.htaccess
-	chmod go+r         @cgibindir@/vqadmin/.htaccess
 
 AUTOMAKE_OPTIONS = foreign no-dependencies
 

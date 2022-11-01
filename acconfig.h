@@ -7,3 +7,7 @@
 #undef VPOPGROUP
 
 #undef QMAILDIR
+
+#undef VQA_VERSION
+
+#undef VQA_PACKAGE
