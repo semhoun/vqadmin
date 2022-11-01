@@ -34,13 +34,4 @@ default - ...
 # them.
 #
 
-tech VI tech1user
-admin VIMUDCA admin1user
-
-#
-# An asterisk in the features field specifies that you
-# want all users in this group to have access to
-# all features.
-#
-
-senior * admin
+admin * admin

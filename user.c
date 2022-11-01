@@ -315,9 +315,8 @@ void show_users()
   strncpy( face, get_lang_code("057"), 29);
   strncpy( size, get_lang_code("058"), 29);
 
-  printf("<HTML><HEAD><TITLE>Show Users</TITLE></HEAD>\n");
-  printf("<body bgcolor=%s vlink=%s link=%s alink=%s>\n",
-    bgcolor, fgcolor, fgcolor, fgcolor);
+  printf("<HTML><HEAD><TITLE>Show Users</TITLE><link href=\"/images/vqadmin/vqadmin.css\" rel=\"stylesheet\" rev=\"stylesheet\" type=\"text/css\" media=\"all\"></HEAD>\n");
+  printf("<body>\n");
   printf("<FONT face=\"%s\" SIZE=\"%s\" color=\"%s\">\n",
     face, size, fgcolor);
 
@@ -330,10 +329,12 @@ void show_users()
   } else {
     printf("<tr><th align=left><FONT face=%s color=\"%s\">User</FONT></th>\n",
           face, fgcolor);
+/*
 #ifdef CLEAR_PASS
     printf("<th><FONT face=%s color=\"%s\">Password</FONT></th>\n",
           face, fgcolor);
 #endif
+*/
     printf("<th><FONT face=%s color=\"%s\">Forward</FONT></th>\n",
           face, fgcolor);
     printf("<th><FONT face=%s color=\"%s\">Vacation</FONT></th>\n",
@@ -353,12 +354,12 @@ void show_users()
       printf("<a href=vqadmin.cgi?nav=view_user&eaddr=%s@%s>",
         vpw->pw_name, domain);
       printf("%s</a></FONT></td>\n", vpw->pw_name);
-
+/*
 #ifdef CLEAR_PASS
       printf("<td align=middle><FONT face=%s color=\"%s\">%s</FONT></td>\n", 
           face, fgcolor, vpw->pw_clear_passwd);
 #endif
-
+*/
       printf("<td align=middle><FONT face=%s color=\"%s\">", face, fgcolor );
       snprintf(workdir, 156, "%s/.qmail", vpw->pw_dir);
       fs=fopen(workdir,"r");

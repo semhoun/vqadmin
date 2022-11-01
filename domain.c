@@ -446,9 +446,8 @@ void list_domains()
   strncpy( face, get_lang_code("057"), 30);
   strncpy( size, get_lang_code("058"), 30);
 
-  printf("<HTML><HEAD><TITLE>List Domains</TITLE></HEAD>\n");
-  printf("<body bgcolor=%s vlink=%s link=%s alink=%s>\n",
-    bgcolor, fgcolor, fgcolor, fgcolor);
+  printf("<HTML><HEAD><TITLE>List Domains</TITLE><link href=\"/images/vqadmin/vqadmin.css\" rel=\"stylesheet\" rev=\"stylesheet\" type=\"text/css\" media=\"all\"></HEAD>\n");
+  printf("<body>\n");
   printf("<FONT face=\"%s\" SIZE=\"%s\" color=\"%s\">\n",
     face, size, fgcolor);
 
